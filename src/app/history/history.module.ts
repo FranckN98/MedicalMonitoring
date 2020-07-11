@@ -12,7 +12,9 @@ import { HistoryPage } from './history.page';
   imports: [
     CommonModule,
     NgCalendarModule,
+    MatInputModule,
     FormsModule,
+    MatFormFieldModule,
     IonicModule,
     HistoryPageRoutingModule
   ],
