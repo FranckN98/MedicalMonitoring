@@ -27,3 +27,29 @@
         </ion-segment-button>
       </ion-segment>
     </div> 
+
+    <div *ngIf="showAddEvent" class="ion-padding">
+      <!-- TODO ranger par ordre alphabetique -->
+          <ion-item line>
+            <ion-label position="floating" lines="none"><b>Reason for visit</b></ion-label>
+            <ion-input type="text" placeholder="Reason for visit" [(ngModel)]="visit.reason" required></ion-input>
+          </ion-item>
+         
+        <ion-item>
+            <ion-label position="floating" lines="none" ><b>Temperature</b></ion-label>
+            <ion-input type="number" placeholder="Temperature" min="35" max="40" [(ngModel)]="visit.temperature" required></ion-input>
+        </ion-item>
+    
+        <ion-item>
+            <ion-label position="floating" lines="none"><b>Medical prescription</b></ion-label>
+            <ion-textarea  placeholder="Medical prescription" [(ngModel)]="visit.prescription" required></ion-textarea>
+        </ion-item>
+    
+         <ion-item>
+            <ion-label position="floating" lines="none"><b>Date of Visit</b></ion-label>
+            <ion-datetime displayFormat="D MMM YYYY H:mm" pickerFormat="MMM D HH:mm" min="2019" [(ngModel)]="visit.startTime" required></ion-datetime>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating" lines="none"><b>Next visit at:</b></ion-label>
+            <ion-datetime displayFormat="D MMM YYYY H:mm" pickerFormat="MMM D HH:mm" min="2019" required [(ngModel)]="visit.endTime" ></ion-datetime>
+          </ion-item>
