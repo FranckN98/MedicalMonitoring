@@ -11,6 +11,7 @@ import { HistoryPage } from './history.page';
 @NgModule({
   imports: [
     CommonModule,
+    NgCalendarModule,
     FormsModule,
     IonicModule,
     HistoryPageRoutingModule
