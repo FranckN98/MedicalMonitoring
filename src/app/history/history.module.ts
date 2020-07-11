@@ -16,6 +16,7 @@ import { HistoryPage } from './history.page';
     FormsModule,
     MatFormFieldModule,
     IonicModule,
+    CdkStepperModule,
     HistoryPageRoutingModule
   ],
   declarations: [HistoryPage]
