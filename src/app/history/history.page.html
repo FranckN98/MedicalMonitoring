@@ -1,9 +1,29 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>history</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+     History {{currentMonth | titlecase}}
+    </ion-title>
+    
   </ion-toolbar>
+  
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
 
-</ion-content>
+  
+   <div *ngIf="!showAddEvent" lines="none"> 
+      <ion-segment value="DAY" scrollable>
+        <ion-segment-button value="day" (click)="changeMode('day')"   >
+          <ion-label>DAY</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="week" (click)="changeMode('week')"  >
+          <ion-label>WEEK</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="month"  (click)="changeMode('month')" >
+          <ion-label>MONTH</ion-label >
+        </ion-segment-button>
+      </ion-segment>
+    </div> 
