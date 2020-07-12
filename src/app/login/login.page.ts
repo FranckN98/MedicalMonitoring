@@ -18,6 +18,13 @@ export class LoginPage implements OnInit {
 
   }
 
+  
+  login(email:string, password:string)
+  {
+    this.generalService.login(email,password);
+    this.connected = this.generalService.connected;
+    this.doctor = this.generalService.doctor;
+  }
 
   ngOnInit() {
   }
