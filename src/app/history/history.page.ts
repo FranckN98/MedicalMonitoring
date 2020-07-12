@@ -67,7 +67,14 @@ export class HistoryPage implements OnInit {
     }
 };
 
-  constructor() { }
+constructor(public alertController:AlertController, public afDB: AngularFireDatabase, public generalService: GeneralService) 
+{ 
+  this.visit.id = this.generalService.userId;
+  this.loadEvent();
+}
+
+async presentAlert() {  }
+
 
   ngOnInit() {
   }
