@@ -1,17 +1,20 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
+import { IonicModule } from '@ionic/angular';
+
+import { WhoAmiPageRoutingModule } from './who-ami-routing.module';
 
 import { WhoAmiPage } from './who-ami.page';
 
-const routes: Routes = [
-  {
-    path: '',
-    component: WhoAmiPage
-  }
-];
-
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    WhoAmiPageRoutingModule
+  ],
+  declarations: [WhoAmiPage]
 })
-export class WhoAmiPageRoutingModule {}
+export class WhoAmiPageModule {}
