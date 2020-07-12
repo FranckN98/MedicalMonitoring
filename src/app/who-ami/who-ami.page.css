@@ -11,3 +11,8 @@ p{
 
     margin: auto;
 }
+
+img{
+    height: 160px;
+    width: 160px;
+}
