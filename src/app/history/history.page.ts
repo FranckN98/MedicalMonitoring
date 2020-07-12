@@ -119,8 +119,97 @@ async onEventSelected(event: any)
     }
   }
 
+  addEvent()
+  {
+     this.afDB.list('History').push(
+       {
+        id : this.visit.id,
+        title :this.visit.reason,
+        temperature : this.visit.temperature,
+        prescription : this.visit.prescription, 
+        startTime: this.visit.startTime,
+        endTime : this.visit.endTime,
+        other : this.fields
+       }
+     )
 
-  ngOnInit() {
+    
+    this.showHideForm();
+  }
+  loadEvent()
+  {
+    this.afDB.list('History').snapshotChanges(['child_added']).subscribe(actions => {
+      actions.forEach(action => {
+
+        if(this.visit.id == action.payload.exportVal().id)
+        {
+          if(action.payload.exportVal().other != null)
+          {
+            for(let [key, value] of Object.entries(action.payload.exportVal().other))
+            {
+                this.fields.push(value);
+              
+            }
+          }
+          var visitObject = 
+          {
+            id : action.payload.exportVal().id,
+            title : action.payload.exportVal().title,
+            temperature : action.payload.exportVal().temperature,
+            prescription : action.payload.exportVal().prescription, 
+            startTime: new Date(action.payload.exportVal().startTime),
+             endTime: new Date(action.payload.exportVal().endTime),
+            other : this.fields
+          }
+
+          this.visits.push(visitObject);
+           this.fields = [];
+          console.log(visitObject)
+        }
+        this.myCalendar.loadEvents();
+      });
+    });
+
+  }
+  
+  changeMode(mode: string)
+  {
+    this.mode = mode; 
+    console.log(mode);
+  }
+
+  newFields(placeholder: string)
+  {
+    this.fields.push({label: placeholder , Value : ""})
+    this.label = "";
+  }
+  deleteField(label:string)
+  {
+    var index = -1;
+    
+    for(let i = 0; i< this.fields.length; i++)
+      if(this.fields[i].label === label )
+        index = i; 
+      
+    if (index != -1)
+    {
+      console.log(index)
+  
+      this.fields.splice(index, 1);
+    } 
+    else
+    {
+      console.log("Cannot delete : "+index)
+      console.log(this.fields)
+    }
+  }
+  disabledField(value:string)
+  {
+    if(value == "")
+    {
+ 
+      
+    }
   }
 
 }
