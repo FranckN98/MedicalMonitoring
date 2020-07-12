@@ -16,6 +16,15 @@ registerLocaleData(localeFr, 'fr');
 })
 export class HistoryPage implements OnInit {
 
+  @ViewChild(CalendarComponent, {static: false}) myCalendar: CalendarComponent;
+  currentDate = new Date();
+  mode:string = "month";
+  currentMonth: string; 
+  showAddEvent: boolean; 
+  visits = [];
+  fields = [];
+  label : string; 
+
   constructor() { }
 
   ngOnInit() {
