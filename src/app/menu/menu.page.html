@@ -1,9 +1,34 @@
-<ion-header>
+
+<ion-header  mode="ios">
   <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title>menu</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
 
-</ion-content>
+<ion-content>
+ 
+  <div  id="container">
+
+    <ion-grid>
+      <h3>Patient data</h3>
+      <ion-row>
+        <ion-col>
+          <ion-card button="true" class="card1" type="button" routerLink="/info"  >
+         
+              <h1 orange><ion-icon name="body-sharp"></ion-icon></h1>
+              <p>Global Health information</p>
+              <ion-ripple-effect></ion-ripple-effect>
+           
+          </ion-card>
+        </ion-col>
+        <ion-col>
+          <ion-card button="true" class="card2" type="button" routerLink="/chat">
+            <h1 orange><ion-icon name="chatbubbles"></ion-icon></h1>
+            <p>Start Chating with a Doctor</p>
+            <ion-ripple-effect></ion-ripple-effect>
+          </ion-card>
+        </ion-col>
