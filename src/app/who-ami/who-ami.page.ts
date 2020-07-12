@@ -1,20 +1,24 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 
-import { IonicModule } from '@ionic/angular';
+import { GeneralService } from './../service/general.service';
+import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
-import { WhoAmiPageRoutingModule } from './who-ami-routing.module';
-
-import { WhoAmiPage } from './who-ami.page';
-
-@NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    WhoAmiPageRoutingModule
-  ],
-  declarations: [WhoAmiPage]
+@Component({
+  selector: 'app-who-ami',
+  templateUrl: './who-ami.page.html',
+  styleUrls: ['./who-ami.page.css'],
 })
-export class WhoAmiPageModule {}
+export class WhoAmiPage implements OnInit {
+
+  constructor(public generalService:GeneralService, public navCtrl:NavController) { }
+
+  ngOnInit() {
+  }
+
+  selectUser( i : number)
+  {
+    this.generalService.selectUserType(i);
+    this.navCtrl.navigateRoot('/login');
+  }
+
+}
