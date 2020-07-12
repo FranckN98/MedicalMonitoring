@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
-@Component({
-  selector: 'app-who-ami',
-  templateUrl: './who-ami.page.html',
-  styleUrls: ['./who-ami.page.scss'],
-})
-export class WhoAmiPage implements OnInit {
+import { WhoAmiPage } from './who-ami.page';
 
-  constructor() { }
-
-  ngOnInit() {
+const routes: Routes = [
+  {
+    path: '',
+    component: WhoAmiPage
   }
+];
 
-}
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
+})
+export class WhoAmiPageRoutingModule {}
