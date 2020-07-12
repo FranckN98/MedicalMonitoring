@@ -25,6 +25,17 @@ export class HistoryPage implements OnInit {
   fields = [];
   label : string; 
 
+  visit = {
+    id : "",
+    reason : "",
+    temperature : "",
+    prescription : "", 
+    startTime: new Date().toString(),
+    endTime:new Date().toString(),
+    
+    other : this.fields
+  }
+
   constructor() { }
 
   ngOnInit() {
