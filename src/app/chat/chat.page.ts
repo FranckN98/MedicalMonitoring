@@ -49,4 +49,22 @@ export class ChatPage implements OnInit {
     this.messageText ='';
   }
 
+  getMessages()
+  {
+    this.afDB.list('Messages/').snapshotChanges(['child_added']).subscribe(
+      actions => {
+        this.messages = []; 
+        actions.forEach(action => {
+          this.messages.push({
+            text:action.payload.exportVal().text,
+            userId: action.payload.exportVal().userId,
+            date: action.payload.exportVal().date,
+            partnerId : action.payload.exportVal().partnerId
+          })
+        })
+      }
+    )
+    this.messages.filter(message => (message.userId == this.userId&&this.selectedDoctor.doctorId==message.partnerId) || (message.partnerid == this.userId&&this.selectedDoctor.doctorId==message.userId));
+  }
+
 }
