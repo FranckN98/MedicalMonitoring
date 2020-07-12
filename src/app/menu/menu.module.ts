@@ -27,3 +27,10 @@ export class MenuPageModule {
 
   ngOnInit() {
   }
+
+  goto()
+  {
+    this.nvctrl.navigateRoot('/info'); 
+    console.log('work');
+  }
+}
