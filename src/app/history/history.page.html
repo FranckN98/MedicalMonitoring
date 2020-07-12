@@ -73,3 +73,18 @@
     
         </div>
     
+      <calendar id="myCalendar"
+        locale="en-GB"
+        [eventSource]="visits"
+        [calendarMode] = "mode"
+        startHour="00"
+        endHour="23"
+        step="90"
+        startingDayWeek="1"
+        [currentDate]="currentDate"
+        (onTitleChanged)="onViewTitleChanged($event)"
+        (onEventSelected)="onEventSelected($event)"
+        [timeInterval]="60"
+        startingDayWeek="1"
+        class="calendar" lines="none">
+    </calendar>
