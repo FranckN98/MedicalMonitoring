@@ -53,3 +53,23 @@
             <ion-label position="floating" lines="none"><b>Next visit at:</b></ion-label>
             <ion-datetime displayFormat="D MMM YYYY H:mm" pickerFormat="MMM D HH:mm" min="2019" required [(ngModel)]="visit.endTime" ></ion-datetime>
           </ion-item>
+
+          <ion-item *ngFor="let field of fields" >
+            <ion-label position="floating" ><b>{{field.label}}</b></ion-label>
+            <ion-input type="text" placeholder="{{field.placeholder}}" [(ngModel)]="field.Value" required></ion-input>
+            <ion-button color="danger" slot="end" (click)="deleteField(field.label)"><ion-icon name="close-outline"></ion-icon>delete</ion-button>
+          </ion-item>
+          <br>
+          
+            <ion-item >
+                <ion-label position="floating" ><b>Create a new Field</b></ion-label>     
+                <ion-button color="secondary" slot="end"  (click)="newFields(label)"  [disabled]="!label"><ion-icon name="add-outline"></ion-icon>Add Field</ion-button>
+              
+                <ion-input type="text" placeholder="Label"   [(ngModel)]="label" required></ion-input>
+            </ion-item>
+        <br>
+          
+          <ion-button color="secondary" expand="block" (click)="addEvent()">Add New Visit</ion-button>
+    
+        </div>
+    
