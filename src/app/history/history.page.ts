@@ -36,6 +36,37 @@ export class HistoryPage implements OnInit {
     other : this.fields
   }
 
+  calendar = {
+    mode: 'month',
+    currentDate: new Date(),
+    dateFormatter: {
+        formatMonthViewDay: function(date:Date) {
+            return date.getDate().toString();
+        },
+        formatMonthViewDayHeader: function(date:Date) {
+            return 'MonMH';
+        },
+        formatMonthViewTitle: function(date:Date) {
+            return 'testMT';
+        },
+        formatWeekViewDayHeader: function(date:Date) {
+            return 'MonWH';
+        },
+        formatWeekViewTitle: function(date:Date) {
+            return 'testWT';
+        },
+        formatWeekViewHourColumn: function(date:Date) {
+            return 'testWH';
+        },
+        formatDayViewHourColumn: function(date:Date) {
+            return 'testDH';
+        },
+        formatDayViewTitle: function(date:Date) {
+            return 'testDT';
+        }
+    }
+};
+
   constructor() { }
 
   ngOnInit() {
