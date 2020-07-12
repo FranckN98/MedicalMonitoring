@@ -24,3 +24,26 @@
 
     
 </ion-content>
+<ion-item>
+  <ion-label  position="floating" >Passwort</ion-label>
+  <ion-input  type="password" [(ngModel)]="password" required></ion-input>
+</ion-item>
+<br>
+<ion-item lines="none">
+  <ion-button slot="end" fill="clear" >Passwort vergessen ? </ion-button>
+</ion-item>
+<ion-item *ngIf="passwordDifferent">
+  <br>
+   <ion-text color="danger" text-center>Email oder Passwort nicht korrekt!</ion-text>
+</ion-item>
+<ion-button type="submit" fill="outline" expand="block" (click)="login(email,password)"><b>Anmelden</b></ion-button>
+    <br>
+    <ion-button expand="block" (click)="registration=true"><b>Registration</b></ion-button>
+   
+  </div>
+  <div class="padding" *ngIf="registration">
+    <br>
+    <ion-item >
+      <ion-label  position="floating"><b>Name</b><ion-text color="danger">*</ion-text></ion-label>
+      <ion-input type="text" [(ngModel)]="person.name" required></ion-input>
+    </ion-item>
