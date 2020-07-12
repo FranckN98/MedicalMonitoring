@@ -9,4 +9,18 @@
 
 <ion-content>
 
+  <h1 *ngIf="connected" >Connected!!</h1>
+
+  <div class="padding" *ngIf="!registration">
+
+    <div class="logo">
+      <ion-icon name="person-outline" color="primary"></ion-icon>
+    </div>
+
+    <ion-item >
+      <ion-label position="floating" >Email</ion-label>
+      <ion-input  type="mail"  [(ngModel)]="email"></ion-input>
+    </ion-item>
+
+    
 </ion-content>
