@@ -67,4 +67,31 @@ export class ChatPage implements OnInit {
     this.messages.filter(message => (message.userId == this.userId&&this.selectedDoctor.doctorId==message.partnerId) || (message.partnerid == this.userId&&this.selectedDoctor.doctorId==message.userId));
   }
 
+
+  selectDoctor(doctor)
+  {
+    this.partnerSelect = true; 
+    this.selectedDoctor = doctor;
+
+    console.log(doctor)
+  }
+
+  getDoctors()
+  {
+    this.afDB.list('DoctorList/').snapshotChanges(['child_added']).subscribe(
+      actions => {
+        this.doctors = []; 
+        actions.forEach(action => {
+          console.log(action.payload.exportVal().name);
+          this.doctors.push({
+            name:action.payload.exportVal().Name,
+            doctorId: action.payload.exportVal().id,
+            startDate: action.payload.exportVal().startDate,
+            rating: action.payload.exportVal().rating,
+            town: action.payload.exportVal().town
+          })
+        })
+      }
+    )
+  }
 }
