@@ -1,12 +1,38 @@
-import { TestBed } from '@angular/core/testing';
+import { Injectable } from '@angular/core';
+import { AngularFireAuth} from '@angular/fire/auth';
+import { NavController } from '@ionic/angular';
+import { AngularFireDatabase } from '@angular/fire/database';
 
-import { GeneralService } from './general.service';
+@Injectable({
+  providedIn: 'root'
+})
+export class GeneralService {
 
-describe('GeneralService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+  dataUser = {
+    email: '',
+    password: ''
+ };
+ doctor : boolean; 
+ patient : boolean;
+ userId: any; 
+  
+ connected: boolean;
 
-  it('should be created', () => {
-    const service: GeneralService = TestBed.get(GeneralService);
-    expect(service).toBeTruthy();
-  });
-});
+  constructor(public afAuth: AngularFireAuth,public afDB: AngularFireDatabase, public navCtrl:NavController,) 
+  { 
+    this.afAuth.authState.subscribe(auth=>{
+      if(!auth)
+      {
+        this.connected = false;
+      }
+      else
+      {
+        this.connected = true;
+        this.userId = auth.uid; 
+        
+      }
+    })
+  }
+
+
+}
