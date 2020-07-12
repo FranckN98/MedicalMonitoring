@@ -88,3 +88,11 @@
         startingDayWeek="1"
         class="calendar" lines="none">
     </calendar>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button (click)="showHideForm()">
+          <ion-icon *ngIf="showAddEvent" name="close"></ion-icon>
+          <ion-icon *ngIf="!showAddEvent" name="add"></ion-icon>
+      </ion-fab-button>
+      </ion-fab>
+    </ion-content>
