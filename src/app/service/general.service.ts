@@ -1,9 +1,12 @@
-import { Injectable } from '@angular/core';
+import { TestBed } from '@angular/core/testing';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class GeneralService {
+import { GeneralService } from './general.service';
 
-  constructor() { }
-}
+describe('GeneralService', () => {
+  beforeEach(() => TestBed.configureTestingModule({}));
+
+  it('should be created', () => {
+    const service: GeneralService = TestBed.get(GeneralService);
+    expect(service).toBeTruthy();
+  });
+});
