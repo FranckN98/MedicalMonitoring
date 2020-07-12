@@ -75,6 +75,50 @@ constructor(public alertController:AlertController, public afDB: AngularFireData
 
 async presentAlert() {  }
 
+async onEventSelected(event: any) 
+{
+
+  var otherText : string | IonicSafeString = '';
+
+  for(var i = 0; i < event.other.length; i++)
+  {
+    otherText += event.other[i].label + ': <b>' + event.other[i].Value + '</b> <br>' ; 
+  }
+  console.log(otherText)
+  const alert = await this.alertController.create({
+    header: event.title,
+  //  subHeader: 'Date of Day :' + event.startTime +' Date of Next Visit : '+event.endTime ,
+    message: 'Temperature : <b>' + event.temperature + '</b><br>Prescription : <b>' + event.prescription + '</b><br>' +otherText,
+    buttons: ['OK'],
+  });
+
+  await alert.present();
+  let result = await alert.onDidDismiss();
+}
+
+  ngOnInit() {
+  }
+ 
+  onViewTitleChanged(title: string)
+  {
+    this.currentMonth = title; 
+  }
+  showHideForm()
+  {
+    
+
+    if(!this.showAddEvent)
+    {
+      this.showAddEvent = !this.showAddEvent;
+      this.mode = 'day';
+    }
+    else
+    {
+      this.showAddEvent = !this.showAddEvent;
+      this.mode = 'month';
+    }
+  }
+
 
   ngOnInit() {
   }
