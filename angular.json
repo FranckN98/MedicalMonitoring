@@ -32,6 +32,7 @@
               }
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               {
                 "input": "src/theme/variables.scss"
               },
@@ -98,7 +99,9 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "styles": [],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css"
+            ],
             "scripts": [],
             "assets": [
               {
@@ -176,15 +179,14 @@
     }
   },
   "cli": {
-    "defaultCollection": "@ionic/angular-toolkit",
-    "analytics": false
+    "defaultCollection": "@ionic/angular-toolkit"
   },
   "schematics": {
     "@ionic/angular-toolkit:component": {
-      "styleext": "scss"
+      "styleext": "css"
     },
     "@ionic/angular-toolkit:page": {
-      "styleext": "scss"
+      "styleext": "css"
     }
   }
 }
