@@ -1,9 +1,37 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>consultation</ion-title>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <h2 text-wrap>Consultation</h2>
+    </ion-title>
+    
   </ion-toolbar>
+  
 </ion-header>
+<ion-content padding>
+  <!-- <div class="header">
+    <h2 text-wrap></h2>
+    <h2 text-wrap></h2>
+    
+  </div> -->
+  <!-- <div class="flex">
+    <div class="border-blue">
+      <div class="border-white">
+        <div class="img-box">
+          <img *ngIf="!existImage"src="../../assets/consultant.png"  class="tweet-img" alt="Patient Image">
 
-<ion-content>
-
-</ion-content>
+          
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <ion-fab vertical="bottom"  horizontal="end" slot="fixed" (click)="changeStep()" >
+    <ion-fab-button color="light" *ngIf="step1 || step2">
+      <ion-icon  name="arrow-forward-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button color="success" *ngIf="step3">
+      <ion-icon  name="checkmark-done-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
