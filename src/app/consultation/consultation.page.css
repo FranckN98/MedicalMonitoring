@@ -56,3 +56,16 @@
     justify-content: center;
     margin-top: -50px;
 }
+
+.scrollItem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .imageScroll .scrollItem img{
+  
+    height: 80px;
+    width: 60px;
+   
+  }
