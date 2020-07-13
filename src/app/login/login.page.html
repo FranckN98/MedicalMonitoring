@@ -47,3 +47,7 @@
       <ion-label  position="floating"><b>Name</b><ion-text color="danger">*</ion-text></ion-label>
       <ion-input type="text" [(ngModel)]="person.name" required></ion-input>
     </ion-item>
+    <ion-item>
+      <ion-label   position="floating" ><b>Geboren am </b><ion-text color="danger">*</ion-text></ion-label>
+      <ion-datetime   [(ngModel)]="person.geburtstag" doneText="OK" cancelText="Abbrechen" max="2005" min="1950" class="datetime-placeholder" displayFormat="DDD. MMM DD, YYYY" ></ion-datetime>
+    </ion-item>
