@@ -35,3 +35,27 @@
       <ion-icon  name="checkmark-done-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+  <ion-fab vertical="bottom" horizontal="Start" slot="fixed" (click)=" backStep()">
+    <ion-fab-button color="light">
+      <ion-icon   name="arrow-back-outline"></ion-icon>
+      
+    </ion-fab-button>
+  </ion-fab>
+
+   <div class="content" *ngIf="step1">
+    <ion-list mode="ios" lines="none">
+      <ion-item>
+        <ion-label mode="ios">Where have hurt?</ion-label>
+        <ion-select mode="ios" value="brown" okText="Okay" cancelText="Dismiss">
+          <ion-select-option value="Headache">Headache</ion-select-option>
+          <ion-select-option value="Stomach aches">Stomach aches </ion-select-option>
+          <ion-select-option value="Sore throats">Sore throats</ion-select-option>
+          <ion-select-option value="Back pain">Back pain</ion-select-option>
+          <ion-select-option value="Teeth ache">Teeth ache</ion-select-option>
+          <ion-select-option value="Other">Other</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item >
+        <ion-label mode="ios" >If other specify here :</ion-label>
+        <ion-input mode="ios" placeholder=""></ion-input>
+      </ion-item>
