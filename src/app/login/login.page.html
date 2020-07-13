@@ -68,3 +68,29 @@
       <ion-checkbox color="success" [(ngModel)]="conditionAccepted" required> </ion-checkbox>
       <ion-text color="primary" >  Ich akzeptiere die Geschäftsbedingungen und die Datenschutzerklärung  </ion-text>
     </ion-item>
+    <ion-item *ngIf="passwordDifferent">
+      <br>
+       <ion-text color="danger" text-center>Passwort verschieden! Bitte überprüfe dein Passwort erneut</ion-text>
+    </ion-item>
+    <ion-item *ngIf="conditionAccepted">
+      <br>
+       <ion-text color="danger" text-center>Du solltest mit unseren Geschäftsbedingungen einverstanden sein, um dich bei uns registrieren zu können</ion-text>
+    </ion-item>
+
+    <ion-item *ngIf="emailAlreadyUsed">
+      <br>
+       <ion-text color="danger" text-center>Email Adresse bereits vergeben! Klicke auf Anmelden wenn du bei uns schon registriert bist</ion-text>
+    </ion-item>
+
+    <br>
+    <ion-button type="submit" shape="round"  expand="block" >Fortfahren </ion-button>
+
+    <ion-item lines="none">
+      <ion-label>Schon registriert? </ion-label>
+      <ion-button slot="end" fill="clear" (click)="registration=false">Anmelden</ion-button>
+    </ion-item>
+   
+  </div>
+
+  
+</ion-content>
