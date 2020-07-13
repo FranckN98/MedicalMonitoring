@@ -1,0 +1,18 @@
+p{
+    text-align: center;
+}
+
+.ion-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 30%;
+
+    margin: auto;
+}
+
+img{
+    height: 160px;
+    width: 160px;
+}
