@@ -19,3 +19,18 @@ export class ConsultationPage implements OnInit {
   ngOnInit() {
   }
 }
+changeStep()
+{
+  if(this.step1)
+  {
+    this.step1 = false;
+    this.step2 = true; 
+    this.step3 = false;
+  }
+  else  if(this.step2)
+  {
+    this.step1 = false;
+    this.step3 = true; 
+    this.step2 = false;
+  }
+}

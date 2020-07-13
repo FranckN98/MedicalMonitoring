@@ -16,6 +16,36 @@
   
     overflow-x: scroll;
     
-  
-  
   }
+
+  .img-box
+{
+    height: 100px;
+    width: 130px;
+    border-bottom-left-radius: 15px 10px;
+    border-bottom-right-radius: 15px 10px;
+  
+    overflow: hidden;
+}
+.border-white 
+{
+    
+    border-bottom-left-radius: 15px 10px;
+    border-bottom-right-radius: 15px 10px;
+  
+    border-top-left-radius: 15px 10px;
+    border-top-right-radius: 15px 10px;
+  
+    width: fit-content;
+}
+
+.border-blue 
+{
+    border: 2px solid #006bbf;
+    border-bottom-left-radius: 15px 10px;
+    border-bottom-right-radius: 15px 10px;
+    border-top-left-radius: 15px 10px;
+    border-top-right-radius: 15px 10px;
+  
+    width: fit-content;
+}
